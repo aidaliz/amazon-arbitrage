@@ -1,0 +1,20 @@
+name = "amazon-arbitrage"
+main = "src/index.js"
+compatibility_date = "2023-12-01"
+
+[site]
+bucket = "./public"
+
+[build]
+command = "npm run build"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "amazon_arbitrage_db"
+database_id = "amazon-arbitrage-db"
+
+[triggers]
+crons = ["0 */6 * * *"] # Run every 6 hours
+
+[env.production]
+workers_dev = false
