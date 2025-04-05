@@ -135,7 +135,7 @@ export class AlertService {
         )
         .all();
       
-      if (!result.results || result.results.length === 0) {
+      if (!result || result.length === 0) {
         return { sent: 0, failed: 0 };
       }
       
